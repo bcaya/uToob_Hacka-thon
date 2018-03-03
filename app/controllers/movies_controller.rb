@@ -1,17 +1,16 @@
 class MoviesController < ApplicationController
-  before_action :movie_params, only: [:show, :edit, :update, :destroy]
+  # before_action :movie_params, only: [:show, :edit, :update, :destroy]
 
   def index
     @movies = Movie.search(params[:search]).order(:created_at)
   end
 
   def show
-    @movie = Movie.find(movie_params)
+    @movie = Movie.find(params[:id])
   end
 
   def new
     @movie = Movie.new
-    render 'form'
   end
 
   def create
@@ -31,6 +30,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:title, :duration, :genre)
+    params.require(:movie).permit(:title, :duration, :genre, :description, :trailer)
   end
 end

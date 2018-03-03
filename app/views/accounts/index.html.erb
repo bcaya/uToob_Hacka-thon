@@ -1,9 +1,21 @@
 <h1>Accounts page</h1>
 <h2>Your playlists</h2>
+<<<<<<< HEAD
 <%= link_to 'Create a new playlist(orsometing)', new_account_path %>
+=======
+<%= link_to 'Add New Playlist', new_account_path %> 
+>>>>>>> 28eaf9483cd076a85257ae5abb93f23db37f1f69
 <ul>
   <% @accounts.each do |account| %>
   <li><%= link_to account.name, account_path(account)%> </li>
 <% end %>
 
 </ul>
+
+<h2>Comments You Have Made</h2>
+<ul>
+  <% current_user.comments.each do |comment| %> 
+  <li><%= comment.body %> - <%= link_to comment.movie.title, comment.movie %></li>
+  <% end %>
+</ul>
+
