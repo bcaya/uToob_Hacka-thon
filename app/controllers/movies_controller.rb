@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :movie_params, only: [:show, :create, :edit, :index]
+  before_action :movie_params, only: [:show, :new, :edit, :index]
 
   def index
     @movies = Movie.search(params[:search]).order(:created_at)
