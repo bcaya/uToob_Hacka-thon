@@ -11,15 +11,14 @@
 <hr /> <p>What would you like to do?</p>
 <br />
 <div>
-  <%= link_to 'Edit Comment', edit_movie_comment_path(@comment) %>
+  <%= link_to 'Edit Comment', edit_movie_comment_path(@comment), class: "ui button tan",  %>
 </div>
 
 <div>
-  <%= link_to 'Delete Comment', movie_comment_path(@movie, @comment), method: :delete %>
+  <%= link_to 'Delete Comment', movie_comment_path(@movie, @comment), class: "ui button tan", method: :delete %>
 </div>
 
 <div>
-  <%= link_to 'Back to Movies', movies_path(@movie) %>
+  <%= link_to 'Back to Movies', movies_path(@movie), class: "ui button tan",  %>
 </div>
 </div>
-

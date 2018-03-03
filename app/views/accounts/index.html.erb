@@ -1,7 +1,5 @@
-<div class="ui container special_head">
-  <h1 class="ui header">Accounts page</h1>
-  <div class="ui divider"></div>
-</div>
+<h1 >Accounts page</h1>
+<hr>
 
 <h2>Your playlists</h2>
 <h3 class="ui button tan"><%= link_to 'Add New Playlist', new_account_path %></h3>
@@ -14,8 +12,7 @@
 
 <h2>Comments You Have Made</h2>
 <ul>
-  <% current_user.comments.each do |comment| %> 
+  <% current_user.comments.each do |comment| %>
   <li><%= comment.body %> - <%= link_to comment.movie.title, comment.movie %></li>
   <% end %>
 </ul>
-

@@ -2,9 +2,9 @@
   <h1>Comments</h1>
 
   <br />
-  
-  <%= link_to  "Add new comment", new_movie_comment_path %>
-  
+
+   <h2 class="ui button tan"><%= link_to  "Add new comment", new_movie_comment_path %></h2>
+
   <br />
    <h2> User Name: <%= current_user.email %> </h2>
     <% @comments.each do |comment| %>

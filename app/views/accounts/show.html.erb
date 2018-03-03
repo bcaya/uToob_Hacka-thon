@@ -1,13 +1,11 @@
 <h1><%= @account.name %></h1>
 <hr />
-<p>What would you like to do?</p>
-<%= link_to 'View ALL Movies', movies_path %>
+<h2>What would you like to do?</h2>
+<h3><%= link_to 'View ALL Movies', movies_path %></h3>
 <br />
-<%= button_to "Add Songs To Playlist", add_movie_account_path(@account), method: :get %>
-<br />
-<%= link_to 'Edit Playlist', edit_account_path(@account)%>
-<br />
-<%= link_to 'Delete Playlist', @account, method: :delete %>
+<%= link_to "Add Songs To Playlist", add_movie_account_path(@account), class: "ui button tan", method: :get %>
+<%= link_to 'Edit Playlist', edit_account_path(@account), class: "ui button tan"%>
+<%= link_to 'Delete Playlist', @account, class: "ui button tan", method: :delete %>
 <br />
 <% @movies.each do |movie| %>
 <% if @array != nil %>
