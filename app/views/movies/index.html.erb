@@ -2,13 +2,14 @@
 <%= link_to 'Upload a New Movie', new_movie_path %>
 <ul>
   <% @movies.each do |movie| %>
+  
+  <iframe src="<%= movie.trailer %>"></iframe>
   <h1><%= link_to movie.title, movie_path(movie) %></h1>
   <h3> <%= movie.genre %></h3>
-  <iframe src="<%= movie.trailer %>"></iframe>
-  <br />
   <p><%= movie.duration %></p>
   <%= link_to 'Add Comment', movie_comments_path(movie) %> 
   <hr />
     <% end %>
+
 
 </ul>
