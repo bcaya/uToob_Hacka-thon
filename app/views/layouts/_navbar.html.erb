@@ -1,13 +1,5 @@
 <div class="right menu">
-  <div class="item">
-    <div class="ui transparent icon input">
-      <%= form_tag movies_path, :method => 'get' do%>
-      <%= text_field_tag :search, params[:search], :type => "text", :placeholder => "Search"%>
-      <%= submit_tag "Search", :class => "search link icon" %>
-    </div>
-  </div>
   <button class='ui right floated button'><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></button>
   <button class='ui right floated button'><%= link_to 'uToob Movies', movies_path %></button>
   <button class='ui right floated button'><%= link_to 'Playlists', root_path %></button>
-
-<% end %>
+</div>

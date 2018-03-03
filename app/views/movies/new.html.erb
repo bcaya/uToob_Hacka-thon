@@ -1,2 +1,15 @@
-<h1>Sorry this option is currently unavailable</h1>
-
+<%= form_for @movie do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, require: true, autofocus: true %>
+  <br>
+  <%= f.label :duration %>
+  <%= f.text_field :duration, require: true, autofocus: true %>
+  <br>
+  <%= f.label :genre %>
+  <%= f.text_field :genre, require: true, autofocus: true %>
+  <br>
+  <%= f.label :description %>
+  <%= f.text_field :description, require: true, autofocus: true %>
+  <br>
+  <%= f.submit %>
+<% end %>

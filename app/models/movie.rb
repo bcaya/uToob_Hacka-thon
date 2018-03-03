@@ -1,9 +1,9 @@
 class Movie < ApplicationRecord
   has_many :comments
 
-  def self.search(search)
+  def self.search(dropdown = nil,search = nil)
   if search
-    where(["title LIKE ?","%#{search}%"])
+    where("#{dropdown} LIKE ?","%#{search}%")
   else
     Movie.all
   end

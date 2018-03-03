@@ -1,15 +1,23 @@
 <h1>uToob Movies</h1>
 <%= link_to 'Upload a New Movie', new_movie_path %>
+
+<div class="item">
+  <div class="ui transparent icon input">
+    <%= form_tag movies_path, :method => 'get'%>
+    <%= select_tag 'dropdown', options_for_select([ "genre", "title" ])  %>
+    <%= text_field_tag :search, params[:search], :type => "text", :placeholder => "Search"%>
+    <%= submit_tag "Search", :class => "search link icon" %>
+  </div>
+</div>
+
 <ul>
   <% @movies.each do |movie| %>
-  
+
   <iframe src="<%= movie.trailer %>"></iframe>
   <h1><%= link_to movie.title, movie_path(movie) %></h1>
   <h3> <%= movie.genre %></h3>
   <p><%= movie.duration %></p>
-  <%= link_to 'Add Comment', movie_comments_path(movie) %> 
+  <%= link_to 'Add Comment', movie_comments_path(movie) %>
   <hr />
     <% end %>
-
-
 </ul>
