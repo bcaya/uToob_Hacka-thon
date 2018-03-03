@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'accounts#index'
+  resources :movies 
   
   devise_for :users
   resources :accounts
