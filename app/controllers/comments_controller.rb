@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-  
+
   before_action :set_movie, except: [:index, :show, :new, :create] # Reid put the except part in. Remove if it's broken.
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
-  
+
   def index
     @comment = Comment.all
   end
@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
       else
         render :new
       end
-  end 
+  end
 
   def edit
   end
@@ -37,7 +37,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to [@movie, @comment] 
+    redirect_to [@movie, @comment]
   end
 
 
