@@ -1,7 +1,11 @@
 <%= form_for [@movie, @comment] do |f| %>
   <br />
   <%= f.label :body %>
-  <%= f.text_field :body, required: true, placeholder: 'Type your comment' %>
+  <%= f.text_area :body, required: true, placeholder: 'Type your comment' %>
   <br />
   <%= f.submit %>
+
+  <div>
+  <%= link_to 'Back', movie_comments_path(@movie) %>
+</div>
 <% end %>
