@@ -6,7 +6,7 @@
   <%= link_to  "Add new comment", new_movie_comment_path %>
   
   <br />
-   <h1> User Name: <%= current_user.email %> </h1>
+   <h2> User Name: <%= current_user.email %> </h2>
     <% @comments.each do |comment| %>
     <div class="item">
       <div class="content">
