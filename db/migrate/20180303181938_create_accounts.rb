@@ -4,6 +4,7 @@ class CreateAccounts < ActiveRecord::Migration[5.1]
       t.string :name
       t.belongs_to :user, foreign_key: true
       t.integer :user_id
+      t.string :movie_titles
 
       t.timestamps
     end

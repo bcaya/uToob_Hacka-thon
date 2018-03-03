@@ -1,0 +1,8 @@
+<hr />
+<% @movies.each do |movie| %>
+<%= @account.id %>
+<%= movie.id %>
+<%= movie.title %>
+<%= link_to 'Add to Playlist', add_movie_to_account_path(m: movie, a: @account) %>
+<br />
+<% end %>
