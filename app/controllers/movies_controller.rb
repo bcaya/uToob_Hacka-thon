@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   # before_action :movie_params, only: [:show, :edit, :update, :destroy]
+  before_action :set_user , only: [:show]
 
   def index
     @movies = Movie.search(params[:dropdown], params[:search]).order(:created_at)
@@ -28,7 +29,9 @@ class MoviesController < ApplicationController
   end
 
   private
-
+  def set_user
+  @user = User.find(params[:id])
+  end 
   def movie_params
     params.require(:movie).permit(:title, :duration, :genre, :description, :trailer)
   end

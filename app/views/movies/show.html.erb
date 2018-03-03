@@ -4,5 +4,13 @@
   <br />
   <p><%= @movie.description %></p>
   <p><%= @movie.duration %></p>
-  <h2 class="ui button tan"><%= link_to 'Add Comment', movie_comments_path(@movie) %></h2>
+  
+  <%= link_to 'Add Comment', movie_comments_path(@movie) %> 
   <hr />
+
+  <% @movie.comments.each.with_index do |comment, index| %>
+  <p><%= @user.email %></p>
+  <p><%= comment.body %></p>
+  <p>Posted at <%= comment.created_at %></p>
+  <hr>
+  <% end %>
