@@ -1,15 +1,7 @@
-<div class="comment">
-
-  <%= form_for [@movie, @comment] do |f| %>
-  <div class="field">
-    <%= f.label :body 'Comment:' %>
-    <%= f.text_field :body %>
-  </div>
-    <br />
-    
-    <br />
-  <div class="actions">
-    <%= f.submit 'Send' %>
-  </div>
-  <% end %>
-</div>
+<%= form_for [@movie, @comment] do |f| %>
+  <br />
+  <%= f.label :body %>
+  <%= f.text_field :body, required: true, placeholder: 'Type your comment' %>
+  <br />
+  <%= f.submit %>
+<% end %>

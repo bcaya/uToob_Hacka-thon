@@ -1,7 +1,7 @@
 <div class="comment">
 
 <h1>User: <%= @comment.user_id %> </h1>
-<p>Comment: <%= comment.body %></p>
+<p>Comment: <%= @comment.body %></p>
 
 
 </div>
@@ -15,11 +15,11 @@
 </div>
 
 <div>
-  <%= link_to 'Delete Comment', @comment, method: :delete %>
+  <%= link_to 'Delete Comment', movie_comment_path(@movie, @comment), method: :delete %>
 </div>
 
 <div>
-  <%= link_to 'Back', comments_path%>
+  <%= link_to 'Back', movie_comments_path(@movie) %>
 </div>
 </div>
 

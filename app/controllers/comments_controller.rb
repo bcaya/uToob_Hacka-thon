@@ -1,27 +1,31 @@
 class CommentsController < ApplicationController
 
-  before_action :set_movie, except: [:index, :show, :new, :create] # Reid put the except part in. Remove if it's broken.
+  before_action :set_movie
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
 
   def index
-    @comment = Comment.all
+    @comments = @movie.comments.all
+    
   end
 
   def show
   end
 
   def new
-    @comment = Comment.new
+    @comment = @movie.comments.new
   end
 
   def create
-    @comment = @movie.comments.new(comment_params)
-      if @comment.save
-        redirect_to [@movie, @comment]
+  # binding.pry
+  if @comment = current_user.comments.create(body: params[:comment][:body], movie_id: @movie.id)
+    # @comment = @movie.comments.new(comment_params)
+    # binding.pry
+      # if @comment.save
+      redirect_to movie_comments_path(@movie)
       else
-        render :new
-      end
+      render :new
+    end
   end
 
   def edit
@@ -56,7 +60,7 @@ class CommentsController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def set_song
+  def set_comment
     @comment = Comment.find(params[:id])
   end
 end

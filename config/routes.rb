@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   root 'accounts#index'
-  resources :movies 
+  # resources :movies 
   
   devise_for :users
   resources :accounts
   
 
-  get '/commentss', to: 'commentss#index'
-  get '/commets/new', to: 'commentss#new'
-  post '/comments', to: 'commentss#create'
-  get '/commentss/:id', to: 'comments#show'
+  # get '/comments', to: 'comments#index'
+  # get '/commets/new', to: 'comments#new'
+  # post '/comments', to: 'comments#create'
+  # get '/comments/:id', to: 'comments#show'
 
 
   resources :movies do

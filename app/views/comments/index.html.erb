@@ -3,14 +3,14 @@
 
   <br />
   
-  <%= link_to  "Add new comment", new_movies_commentspath %>
+  <%= link_to  "Add new comment", new_movie_comment_path %>
   
   <br />
-    <%= link_to "User Name: ", user_id %>
-    <% @comments.each do |song| %>
+   <h1> User Name: <%= current_user.email %> </h1>
+    <% @comments.each do |comment| %>
     <div class="item">
       <div class="content">
-        <li class="header"><%= link_to movies_comment.body, movies_comments_path  %></li>
+        <li class="header"><%= link_to comment.body, [@movie, comment] %></li>
       </div>
     </div>
   <% end %>
