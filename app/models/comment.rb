@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :User
-  belongs_to :Movie
+  belongs_to :user
+  belongs_to :movie
 end
