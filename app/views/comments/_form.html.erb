@@ -1,0 +1,15 @@
+<div class="comment">
+
+  <%= form_for [@movie, @comment] do |f| %>
+  <div class="field">
+    <%= f.label :body 'Comment:' %>
+    <%= f.text_field :body %>
+  </div>
+    <br />
+    
+    <br />
+  <div class="actions">
+    <%= f.submit 'Send' %>
+  </div>
+  <% end %>
+</div>
