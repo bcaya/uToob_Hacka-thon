@@ -1,8 +1,8 @@
 class MoviesController < ApplicationController
-  before_action :movie_params, :only [:show, :create, :edit]
+  before_action :movie_params, only: [:show, :create, :edit]
 
   def index
-    @movies = Movies.all
+    @movies = Movie.all
   end
 
   def show
@@ -31,6 +31,6 @@ class MoviesController < ApplicationController
   private
 
   def movie_params
-    params.require(:movie).permit(:name, :duration, :genre)
+    params.require(:movie).permit(:title, :duration, :genre)
   end
 end
