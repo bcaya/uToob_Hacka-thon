@@ -1,0 +1,8 @@
+<h1>uToob Movies</h1>
+<%= link_to 'Upload a New Movie', new_movie_path %> 
+<ul>
+  <% @movies.each do |movie| %> 
+  <li><%= link_to movie.title, movie_path(movie)%> </li>
+<% end %> 
+
+</ul>
