@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :movie_params, only: [:show, :create, :edit, :index]
+  before_action :movie_params, only: [:show, :edit, :update, :destroy]
 
   def index
     @movies = Movie.all
